@@ -18,3 +18,14 @@ if (typeof jQuery !== 'undefined') {
         });
     })(jQuery);
 }
+
+
+$(document).ready(function () {
+    "use strict";
+
+    $(document).on('click', '#logo-principal', function (e) {
+        e.preventDefault();
+		location.href = "/";
+    });
+
+});
