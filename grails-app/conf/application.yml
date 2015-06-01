@@ -72,25 +72,24 @@ grails:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    #driverClassName: org.postgresql.Driver
-    username: sa
-    password:
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: ""
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-            #url: "jdbc:postgresql://localhost:5432/devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            url: jdbc:mysql://127.0.0.1:3306/blogpian-grails-dev
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://127.0.0.1:3306/blogpian-grails-test
     production:
         dataSource:
             dbCreate: update
-            url: jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://127.0.0.1:3306/blogpian-grails
             properties:
                 jmxEnabled: true
                 initialSize: 5

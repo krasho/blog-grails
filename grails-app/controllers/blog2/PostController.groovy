@@ -18,7 +18,8 @@ class PostController {
     }
 
     def create() {
-        respond new Post(params)
+        [listOfCategories: Category.findAll(), post: new Post(params), categoryCount: Category.count() ]
+        //respond new Post(params)
     }
 
     @Transactional
