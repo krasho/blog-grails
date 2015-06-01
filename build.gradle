@@ -73,6 +73,7 @@ dependencies {
     console "org.grails:grails-console"
 
     runtime "mysql:mysql-connector-java:5.1.29"
+    runtime 'postgresql:postgresql:8.4-702.jdbc3'
 }
 
 task wrapper(type: Wrapper) {
